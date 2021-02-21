@@ -12,18 +12,31 @@
   <h1>ESP8266 Web Server</h1>
   <p>GPIO state<strong> %STATE%</strong></p>
   <p>
-    <a href="/on"><button class="button">ON</button></a>
-    <a href="/off"><button class="button button2">OFF</button></a>
+    <button id='led_on' class="button">ON</button>
+   >
+   <button id='led_off' class="button button2">OFF</button>
   </p>
   <p>
-    <span class="sensor-labels">Temperature</span>
-    <span id="humidity">%HUMIDITY E%</span>
-    <sup class="units">&deg;C</sup>
-      <button id="btn-measure-humidity" >
-        Measure soil humidity
-      </button>
+    <!-- <span class="sensor-labels">Temperature</span>
+    <span id="humidity">%HUMIDITY E%</span> -->
+    <!-- <sup class="units">&deg;C</sup> -->
   </p>
-  <div class="ct-chart ct-golden-section" id="chart1"></div>
+  <div>
+    <button id="btn-measure-humidity" >
+      Measure soil humidity
+    </button>
+    <p id='current_soil_humidity'></p>
+  </div>
+  <div class="ct-chart ct-golden-section" id="humidityChart"></div>
+  <button id="reset_data">Reset data</button>
+  <button id="update_data">Update data</button>
+  <button id="calibrate_min" >
+    Calibrate min value
+  </button>
+  <button id="calibrate_max" >
+    Calibrate max value
+  </button>
+
 
 </body>
 <script src="chartist.min.js"></script>
